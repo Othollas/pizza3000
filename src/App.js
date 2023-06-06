@@ -7,12 +7,10 @@ import { useNavigate } from 'react-router-dom';
 
 library.add(faTruckFast, faFireFlameCurved, faDollarSign)
 function App() {
-
   const navigate = useNavigate();
 
   return (
     <div className="App">
-
       <Header />
       <div className="main">
         <div className="home">
