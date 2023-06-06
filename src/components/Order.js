@@ -9,9 +9,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { add } from '../slices'
 import CartDisplay from './CartDisplay'
 library.add(faArrowLeft)
+
 const Order = () => {
 
-  const orders = useSelector(state => state.data.orderid)
+  const orders = useSelector(state => state.data.orders)
+
 
   const dispatch = useDispatch();
 
@@ -41,28 +43,23 @@ const Order = () => {
       </div >
     );
   }
-  const listOrder = orders.map(item => {
-    return(
-      <div>Détail de la commande : {item.id} </div>
-    )
 
-  })
   return (
     <div>
 
       <Header
-        icon="fa-solid fa-arrow-left"
+        showIcon="true"
       />
       <div className="main">
         <div className="containerOrder">
-        <div className="order">
-          {renderPizza()}
+          <div className="order">
+            {renderPizza()}
+          </div>
+          <div className="list">
+            <p>{orders.id} </p>
+            <input type="text" />
+          </div>
         </div>
-        <div className="list">
-          <p>{listOrder} </p>
-          <input type="text"/>
-        </div>
-      </div>
       </div>
     </div>
   )

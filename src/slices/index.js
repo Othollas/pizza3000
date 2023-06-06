@@ -3,31 +3,24 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     orders: [],
-    orderid: [],
 }
 
 const dataSlice = createSlice({
     name: "data",
     initialState,
     reducers: {
-        add: (state, action) => {
+        addId: (state, action) => {
             state.orders.push({
-
-                pizza: action.payload
+                id: Date.now(),
 
             })
 
         },
-        addOrderid: (state, action) => {
-            state.orderid.push({
-                id: action.payload
-            }
-            )
-        }
+
     }
 
 })
 
-export const { add, addOrderid } = dataSlice.actions;
+export const { add } = dataSlice.actions;
 
 export default dataSlice.reducer;

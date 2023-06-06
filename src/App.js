@@ -11,17 +11,12 @@ library.add(faTruckFast, faFireFlameCurved, faDollarSign)
 function App() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const order = useSelector(state => state.data.orders)
 
-
-  const generateId = () => {
-    return Math.floor(Math.random() * 101);
+  const createNewOrder = () => {
+    dispatch(addId)
   }
- 
-  const onClick = () => {
-    const newOrderId = generateId();
-    dispatch(addOrderid(newOrderId));
-    navigate(`/order/${newOrderId}`);
-  };
+
   return (
     <div className="App">
       <Header />
@@ -33,7 +28,7 @@ function App() {
             size="4x"
             title="Nouvelle commande"
             text="Créer et enregistrer une nouvelle commande"
-            action={onClick}
+            action={() => navigate("/order ")}
           />
           <Card
             className="bgRed wrapperCard"

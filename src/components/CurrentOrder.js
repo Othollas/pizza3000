@@ -4,14 +4,14 @@ import ListOrder from './ListOrder';
 import Header from './Header';
 
 const CurrentOrder = () => {
-  const orderIds = useSelector(state => state.data.orderid);
+  const orderIds = useSelector(state => state.data.orders);
 
   const renderOrderId = () => {
     const listOrder = orderIds.map(order => {
       return (
         <ListOrder
           id={order.id}
-          index={order.index}
+  
 
         />
       );
@@ -27,7 +27,7 @@ const CurrentOrder = () => {
 
     <div className='currentOrder'>
       <Header
-        icon="fa-solid fa-arrow-left"
+        showIcon="true"
       />
       {renderOrderId}
     </div>
