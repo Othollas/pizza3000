@@ -5,47 +5,62 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import PizzaCard from './PizzaCard'
 import pizzas from '../pizzas'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { add } from '../slices'
+import CartDisplay from './CartDisplay'
 library.add(faArrowLeft)
 const Order = () => {
 
-    // const pizzas = useSelector(state => state.data.pizzas);
+  const orders = useSelector(state => state.data.orders)
+  const dispatch = useDispatch();
 
 
+  const addPizza = (pizza) => {
+    dispatch(add(pizza))
 
+  }
+  const renderPizza = () => {
+    const listPizzas = pizzas.map((pizza, index) => {
+      return (
+        <PizzaCard
+          key={pizza.id}
+          img={pizza.img}
+          price={pizza.price}
+          name={pizza.name}
+          action={() => addPizza(pizza)}
+        />
+      );
+    });
 
-    const renderPizza = () => {
-        const listPizzas = pizzas.map(pizza => {
-          return (
-            <PizzaCard
-              key={pizza.id}
-              img={pizza.img}
-              item={pizza}
-              price={pizza.price}
-              name={pizza.name}
-            />
-          );
-        });
-    
-        return (
-          <div>
-            {listPizzas}
-          </div >
-        );
-      }
     return (
-        <div>
+      <div>
+        {listPizzas}
+      </div >
+    );
+  }
+  return (
+    <div>
 
-            <Header
-                icon="fa-solid fa-arrow-left"
-            />
-            <div className="main">
-                <div className="order">
-            {renderPizza()}
-            </div>
-            </div>
+      <Header
+        icon="fa-solid fa-arrow-left"
+      />
+      <div className="main">
+        <div className="containerOrder">
+        <div className="order">
+          {renderPizza()}
         </div>
-    )
+        <div className="list">
+          <p>Détail de la commande n° commande </p>
+          <CartDisplay
+          items={orders.item}
+          total={orders.total}
+        />
+          <input type="text" value="Soit un total de 'prix'" />
+        </div>
+      </div>
+      </div>
+    </div>
+  )
 }
 
 export default Order

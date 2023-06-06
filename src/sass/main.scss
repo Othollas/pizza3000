@@ -41,7 +41,13 @@
     margin: 0 auto;
 }
 
-
+.containerOrder{
+    display: flex;
+    .list{
+        background-color: white;
+        width: 50%;
+    }
+}
 
 // Main
 // #root{
@@ -137,3 +143,4 @@
         
     }
 }
+

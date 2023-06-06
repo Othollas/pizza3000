@@ -1,8 +1,8 @@
 import React from 'react'
 
-const PizzaCard = ({ img, name, price }) => {
+const PizzaCard = ({ img, name, price , action }) => {
     return (
-        <div className="wrapperPizza">
+        <div className="wrapperPizza" onClick={action}>
             <img src={img} alt="" />
             <div className="wrapperText">
                 <h1>{name}</h1>

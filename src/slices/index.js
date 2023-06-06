@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = {
-   arrayPiz:[]
+   orders:[]
 }
 
 const dataSlice = createSlice({
@@ -11,12 +11,15 @@ const dataSlice = createSlice({
     reducers: {
         add: (state, action) => {
             state.orders.push({
-                id: Date.now(),
+                
+                pizza: action.payload
                 
             })
         }
     }
 
 })
+
+export const { add } = dataSlice.actions;
 
 export default dataSlice.reducer;
