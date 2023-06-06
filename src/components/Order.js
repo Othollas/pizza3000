@@ -51,11 +51,11 @@ const Order = () => {
         </div>
         <div className="list">
           <p>Détail de la commande n° commande </p>
-          <CartDisplay
+          {/* <CartDisplay
           items={orders.item}
           total={orders.total}
-        />
-          <input type="text" value="Soit un total de 'prix'" />
+        /> */}
+          <input type="text"/>
         </div>
       </div>
       </div>

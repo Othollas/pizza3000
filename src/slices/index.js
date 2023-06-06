@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = {
-   orders:[]
+    orders: [],
+    orderid: [],
 }
 
 const dataSlice = createSlice({
@@ -11,15 +12,22 @@ const dataSlice = createSlice({
     reducers: {
         add: (state, action) => {
             state.orders.push({
-                
+
                 pizza: action.payload
-                
+
             })
+
+        },
+        addOrderid: (state, action) => {
+            state.orderid.push({
+                id: action.payload
+            }
+            )
         }
     }
 
 })
 
-export const { add } = dataSlice.actions;
+export const { add, addOrderid } = dataSlice.actions;
 
 export default dataSlice.reducer;
