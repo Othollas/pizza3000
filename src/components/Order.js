@@ -11,7 +11,8 @@ import CartDisplay from './CartDisplay'
 library.add(faArrowLeft)
 const Order = () => {
 
-  const orders = useSelector(state => state.data.orders)
+  const orders = useSelector(state => state.data.orderid)
+
   const dispatch = useDispatch();
 
 
@@ -32,12 +33,20 @@ const Order = () => {
       );
     });
 
+
+
     return (
       <div>
         {listPizzas}
       </div >
     );
   }
+  const listOrder = orders.map(item => {
+    return(
+      <div>Détail de la commande : {item.id} </div>
+    )
+
+  })
   return (
     <div>
 
@@ -50,11 +59,7 @@ const Order = () => {
           {renderPizza()}
         </div>
         <div className="list">
-          <p>Détail de la commande n° commande </p>
-          {/* <CartDisplay
-          items={orders.item}
-          total={orders.total}
-        /> */}
+          <p>{listOrder} </p>
           <input type="text"/>
         </div>
       </div>

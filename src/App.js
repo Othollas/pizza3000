@@ -10,7 +10,6 @@ library.add(faTruckFast, faFireFlameCurved, faDollarSign)
 
 function App() {
   const navigate = useNavigate();
-  const orderIds = useSelector(state => state.data.orderIds);
   const dispatch = useDispatch();
 
 

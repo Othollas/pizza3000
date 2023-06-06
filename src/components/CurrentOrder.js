@@ -1,26 +1,37 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import ListOrder from './ListOrder';
+import Header from './Header';
 
-const currentOrder = () => {
-  const orderIds = useSelector(state => state.data.orderIds);
+const CurrentOrder = () => {
+  const orderIds = useSelector(state => state.data.orderid);
+
   const renderOrderId = () => {
-    const listOrder = orderIds.map((order, index) => {
+    const listOrder = orderIds.map(order => {
       return (
-        <input type="text" />
+        <ListOrder
+          id={order.id}
+          index={order.index}
+
+        />
       );
 
     });
-    return(
+    return (
       <div className="listOrder">
         {listOrder}
       </div>
     )
   }
   return (
+
     <div className='currentOrder'>
-      
+      <Header
+        icon="fa-solid fa-arrow-left"
+      />
+      {renderOrderId}
     </div>
   )
 }
 
-export default currentOrder;
+export default CurrentOrder;
