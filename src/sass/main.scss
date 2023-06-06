@@ -1,0 +1,139 @@
+@use "reset";
+
+@use "variables" as v;
+
+@use "mixins" as m;
+
+// Header
+
+.App-header {
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    top:50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            width:5rem;
+        }
+        .spinAnimation{
+            animation-name: spin;
+            animation-duration: 500ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        .spinAnimationInverted{
+            animation-name: spinInverted;
+            animation-duration: 500ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    }
+}
+
+
+// Variables Globales
+.container {
+    max-width: 90rem;
+    margin: 0 auto;
+}
+
+
+
+// Main
+// #root{
+//     background-image: url('../img/backgroundpizza.jpg');
+//     background-attachment: fixed;
+//     background-size: cover;
+//     width: 100vw;
+//     height: 100%;  
+// }
+
+
+.main{
+    position: relative;
+    top: 150px;
+}
+.home{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.wrapperCard{
+    cursor: pointer;
+    text-align: center;
+    padding: 2rem 6rem;
+    border: 1px solid white;
+    color: white;
+}
+// Gestion des cartes 
+
+.bgBlue{
+    background-color: #006994;
+}
+
+.bgGreen{
+    background-color: #00913e;
+}
+
+.bgRed{
+    background: #911d00;
+}
+
+.wrapperText{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.wrapperPizza{
+    display: inline-block;
+    margin: 3rem;
+}
+
+// Footer
+
+
+// Animations 
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+@keyframes spinInverted {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(-360deg);
+    }
+}
+
+// Not found
+
+.notFound{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    font-size: v.$fontSizeTitleLarge;
+
+ 
+    img{
+     
+        width: 5rem;
+    }
+    .wrapper{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+}
