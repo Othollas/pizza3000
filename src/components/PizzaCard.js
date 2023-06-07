@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PizzaCard = ({ img, name, price , action }) => {
+const PizzaCard = ({ img, name, price , action , onclick}) => {
     return (
         <div className="wrapperPizza" onClick={action}>
             <img src={img} alt="" />

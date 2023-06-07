@@ -1,10 +1,10 @@
-import React from 'react';
-import pizza from '../img/icon/pizza.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useNavigate } from 'react-router-dom';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core'
-library.add(faArrowLeft)
+import React from "react";
+import pizza from "../img/icon/pizza.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+library.add(faArrowLeft);
 const Header = ({ showIcon }) => {
   const navigate = useNavigate();
 

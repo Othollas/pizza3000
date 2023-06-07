@@ -7,6 +7,7 @@ const NotFound = () => {
 
     <div className="notFound">
       <Header
+      showIcon="true"
       />
       <div className="wrapper">
         <div>4</div><img src={`${process.env.PUBLIC_URL}/pizzaicon.png`} alt="" /><div>4</div>

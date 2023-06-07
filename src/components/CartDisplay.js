@@ -1,19 +1,18 @@
 import React from 'react'
 
-const CartDisplay = ({ items, total }) => {
+const CartDisplay = ({ items , price }) => {
 
     const cartItems = items.map(item => {
         return (
-            <div key={item.id}> {item.name} + {item.price}€</div>
+            <div key={item.id}>{item.name} - {item.price}€</div>
         )
-    })
-
+    });
   return (
     <div>
-        {cartItems}
-        <div className="App-cart-total">Soit un total de {total}€</div>
+
+       {cartItems}
     </div>
   )
 }
 
-export default CartDisplay
+export default CartDisplay;
